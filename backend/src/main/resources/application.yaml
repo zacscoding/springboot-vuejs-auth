@@ -1,0 +1,46 @@
+## Server & Spring
+server:
+  port: 3000
+
+
+spring:
+  datasource:
+    username: sa
+    password:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+
+    hikari:
+      jdbc-url: jdbc:h2:mem:testdb
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+      jdbc.lob.non_contextual_creation: true
+    properties:
+      hibernate:
+        format_sql: true
+  thymeleaf:
+    prefix: classpath:/static/
+
+## Logging
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+        type:
+          descriptor:
+            sql:
+              BasicBinder: trace
+      springframework:
+        security: info
+    root: info
+
+## Application properties
+my-app:
+  admin-username: admin@email.com
+  admin-password: admin
+  user-username: user@email.com
+  user-password: user
+  client-id: myApp
+  client-secret: pass

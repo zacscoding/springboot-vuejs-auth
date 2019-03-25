@@ -26,8 +26,8 @@
     created() {
       AXIOS.get('/me')
       .then(({data}) => {
-        this.email = data.user;
-        this.roles = data.roles;
+        this.email = data.email;
+        this.roles = data.roles.join(',');
       })
       .catch((err) => {
         console.error("Failed to get me", err);
