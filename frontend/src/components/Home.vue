@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Home</h2>
-    <div> {{ greeting }}</div>
+    <div> {{ data }}</div>
   </div>
 
 </template>
@@ -12,12 +12,17 @@
   export default {
     data() {
       return {
-        greeting: ''
+        data: ''
       }
     },
     created() {
       AXIOS.get('/home')
-      .then((result) => this.greeting = result.data);
+      .then((result) => {
+        this.data = result.data
+      })
+      .catch((err) => {
+        console.error("Failed to get /home", err);
+      })
     }
   }
 </script>

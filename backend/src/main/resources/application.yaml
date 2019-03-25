@@ -2,7 +2,6 @@
 server:
   port: 3000
 
-
 spring:
   datasource:
     username: sa
@@ -33,7 +32,7 @@ logging:
             sql:
               BasicBinder: trace
       springframework:
-        security: info
+        security: debug
     root: info
 
 ## Application properties

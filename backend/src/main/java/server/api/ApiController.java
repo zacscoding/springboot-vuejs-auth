@@ -20,7 +20,6 @@ public class ApiController {
     @GetMapping("/home")
     public String home(@CurrentUser Account account) {
         logger.info("## request /home. user : {}", account == null ? null : account.getEmail());
-
         return "Hello " + extractUsername(account) + "!";
     }
 
