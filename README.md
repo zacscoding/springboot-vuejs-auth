@@ -3,7 +3,7 @@
 this is demo project for spring boot + vue.js with maven multi module.
 
 - backend : spring boot with OAuth2 server
-- frontend : vuejs with access_token  
+- frontend : vuejs with client app  
 
 > #### Project structure  
 
@@ -65,7 +65,9 @@ grant_type : password
   </tr>       
 </table>
 
-> #### Getting started
+> #### Getting started  
+
+1. build frontend & running backend
 
 ```aidl
 $ git clone https://github.com/zacscoding/springboot-vuejs-auth.git
@@ -76,12 +78,26 @@ OR
 $ mvn --projects backend spring-boot:run
 ```  
 
-> #### webpack-dev-server  
+and then connect to http://localhost:3000/
+
+2. running respectively  
+
+> #### backend with spring boot  
+
+```
+$ cd backend
+$ mvn spring-boot:run
+```
+
+> #### frontend with webpack-dev-server  
 
 ```aidl
 $ cd frontend
 $ npm start
 ```  
+
+and then connect to http://localhost:8080/
+
 
 > #### Demos  
 
@@ -105,4 +121,5 @@ $ npm start
 ## References  
 
 - maven : https://github.com/jonashackt/spring-boot-vuejs
+- oauth server : https://github.com/keesun/study/tree/master/rest-api-with-spring
 - vue code : https://github.com/jeonghwan-kim/vue-auth-sample
